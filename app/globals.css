@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+    --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-100 antialiased bg-gray-900;
+    font-family: var(--font-plus-jakarta);
+  }
+
+  /* Heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* Brand/Logo specific */
+  .brand-font {
+    font-family: var(--font-space-grotesk);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  /* Body text */
+  p, span, div {
+    font-family: var(--font-plus-jakarta);
+  }
+
+  /* Navigation and UI elements */
+  nav, button, .nav-font {
+    font-family: var(--font-plus-jakarta);
+    font-weight: 500;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+    font-family: var(--font-space-grotesk);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-gray-900/80 border border-gray-700/30;
+  }
+  
+  .dark-card {
+    @apply bg-gray-800/50 border border-gray-700/30 backdrop-blur-sm;
+  }
+  
+  .dark-gradient-bg {
+    background: linear-gradient(135deg, 
+      rgba(17, 24, 39, 0.8) 0%, 
+      rgba(31, 41, 55, 0.8) 50%, 
+      rgba(17, 24, 39, 0.8) 100%);
+  }
+
+  /* Modern typography utilities */
+  .text-display {
+    font-family: var(--font-space-grotesk);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .text-heading {
+    font-family: var(--font-space-grotesk);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .text-body {
+    font-family: var(--font-plus-jakarta);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .text-ui {
+    font-family: var(--font-plus-jakarta);
+    font-weight: 500;
+  }
+} 
