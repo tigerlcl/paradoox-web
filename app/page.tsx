@@ -7,7 +7,7 @@ import { ProblemSection, SolutionSection, CustomerSection } from '@/components/S
 import Footer from '@/components/Footer'
 import WaitlistModal from '@/components/WaitlistModal'
 import AnimatedBackground from '@/components/AnimatedBackground'
-import { Analytics } from "@vercel/analytics/next"
+
 
 export default function Home() {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false)
@@ -27,7 +27,6 @@ export default function Home() {
         <Footer onOpenWaitlist={openWaitlistModal} />
       </div>
       <WaitlistModal isOpen={isWaitlistModalOpen} onClose={closeWaitlistModal} />
-      <Analytics />
     </main>
   )
 } 
