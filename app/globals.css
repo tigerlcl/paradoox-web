@@ -14,8 +14,9 @@
   }
   
   body {
-    @apply text-gray-100 antialiased bg-gray-900;
+    @apply text-gray-100 antialiased;
     font-family: var(--font-plus-jakarta);
+    background: linear-gradient(135deg, #1E3D58 0%, #0F172A 100%);
   }
 
   /* Heading styles */
@@ -57,7 +58,8 @@
   }
   
   .dark-card {
-    @apply bg-gray-800/50 border border-gray-700/30 backdrop-blur-sm;
+    @apply bg-slate-800/40 border border-slate-600/30 backdrop-blur-sm;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
   
   .dark-gradient-bg {
@@ -89,5 +91,48 @@
   .text-ui {
     font-family: var(--font-plus-jakarta);
     font-weight: 500;
+  }
+
+  /* Financial Analytics Theme */
+  .financial-card {
+    @apply bg-slate-800/30 border border-cyan-500/20 backdrop-blur-sm;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.1);
+  }
+
+  .data-point {
+    @apply relative;
+  }
+
+  .data-point::before {
+    content: '';
+    @apply absolute -left-2 top-1/2 w-1 h-1 bg-cyan-400 rounded-full transform -translate-y-1/2;
+  }
+
+  /* Animated financial elements */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+    }
+  }
+
+  .financial-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Enhanced gradient backgrounds for financial theme */
+  .financial-gradient {
+    background: linear-gradient(135deg, 
+      rgba(15, 23, 42, 0.9) 0%, 
+      rgba(30, 41, 59, 0.9) 50%, 
+      rgba(51, 65, 85, 0.9) 100%);
+  }
+
+  .analytics-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
   }
 } 

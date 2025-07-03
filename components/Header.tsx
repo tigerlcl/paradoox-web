@@ -3,42 +3,97 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function Header() {
+interface HeaderProps {
+  onOpenWaitlist: () => void
+}
+
+export default function Header({ onOpenWaitlist }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigationItems = [
-    { name: 'Research', href: '#research' },
-    { name: 'About us', href: '#about' },
-    { name: 'Docs', href: '#docs' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Products', href: '/' },
+    { name: 'Blog', href: '/' },
+    { name: 'Company', href: '/' },
   ]
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-effect">
+    <header className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl brand-font">P</span>
+            <Link href="/" className="flex items-center">
+              <div className="bg-white opacity-95 rounded-lg p-2 shadow-md hover:shadow-lg transition-all duration-200">
+                <img 
+                  src="/paradoox ai logo.svg" 
+                  alt="Paradoox AI" 
+                  className="h-8 w-auto"
+                />
               </div>
-              <span className="text-2xl gradient-text brand-font">Paradoox AI</span>
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          {/* Center Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-ui text-sm font-medium tracking-wide"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-ui text-base font-medium tracking-wide"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
+
+          {/* Right Section - Social Icons + Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Social Icons */}
+            <div className="flex items-center space-x-3 mr-2">
+              <Link
+                href="https://github.com/HKUSTDial/deepfund"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <i className="fab fa-github text-3xl"></i>
+              </Link>
+              {/* <Link
+                href="https://discord.gg/paradoox"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                <i className="fab fa-discord text-lg"></i>
+              </Link> */}
+              {/* <Link
+                href="https://x.com/paradoox_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              >
+                <i className="fab fa-twitter text-lg"></i>
+              </Link> */}
+            </div>
+            
+            {/* Action Buttons */}
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={onOpenWaitlist}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-medium text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                Join Waitlist
+              </button>
+              <Link
+                href="https://deepfund.paradoox.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-blue-500 text-blue-400 px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 font-medium text-sm"
+              >
+                Try Demo
+              </Link>
+            </div>
+          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -71,13 +126,51 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Mobile Social Icons */}
+              <div className="flex items-center justify-center space-x-6 py-2">
+                <Link
+                  href="https://github.com/HKUSTDial/deepfund"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <i className="fab fa-github text-xl"></i>
+                </Link>
+                <Link
+                  href="https://discord.gg/paradoox"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <i className="fab fa-discord text-xl"></i>
+                </Link>
+                <Link
+                  href="https://x.com/paradoox_ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                >
+                  <i className="fab fa-x-twitter text-xl"></i>
+                </Link>
+              </div>
+
+              <button
+                onClick={() => {
+                  onOpenWaitlist()
+                  setIsMenuOpen(false)
+                }}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-purple-700 transition-colors duration-200 font-medium text-center w-full"
+              >
+                Join Waitlist
+              </button>
               <Link
                 href="https://deepfund.paradoox.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium text-center"
+                className="border border-blue-500 text-blue-400 px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 font-medium text-center"
               >
-                Try DeepFund
+                Try Demo
               </Link>
             </nav>
           </div>

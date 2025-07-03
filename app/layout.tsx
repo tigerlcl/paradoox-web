@@ -23,6 +23,9 @@ export const metadata = {
   title: 'Paradoox AI - How AI can shape your trust?',
   description: 'Leading AI research and innovation company building trustworthy artificial intelligence through cutting-edge LLM and Multi-Agent research.',
   keywords: 'AI, artificial intelligence, research, innovation, machine learning, deep learning, LLM, Multi-Agent, trustworthy AI',
+  icons: {
+    icon: '/icon.jpg',
+  },
 }
 
 export default function RootLayout({
