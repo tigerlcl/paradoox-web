@@ -21,8 +21,7 @@ export default function Footer({ onOpenWaitlist }: FooterProps) {
               />
             </div>
             <p className="text-gray-300 mb-6 max-w-md text-body leading-relaxed">
-              Building your personal <span className="text-yellow-400 font-medium">AI-driven Fund Manager</span> and making sophisticated, 
-              data-backed investment strategies accessible to <span className="text-yellow-400 font-medium">everyone</span>.
+              Pilot Your Next Investment with <span className="text-yellow-400 font-medium">AI-driven</span> Fund Manager
             </p>
             <div className="text-sm text-gray-400 text-ui">
               <p>© {currentYear} Paradoox AI. All rights reserved.</p>
