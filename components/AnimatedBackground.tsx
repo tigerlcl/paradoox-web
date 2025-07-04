@@ -38,8 +38,8 @@ const AnimatedBackground = () => {
         this.y = Math.random() * height
         this.vx = (Math.random() - 0.5) * 0.5
         this.vy = (Math.random() - 0.5) * 0.5
-        this.radius = Math.random() * 2.5 + 3
-        this.color = `rgba(67, 176, 241, ${Math.random() * 0.4 + 0.4})` // #43B0F1 - More visible
+        this.radius = Math.random() * 2.5 + 5
+        this.color = `rgb(0, 0, 0)` // Solid black particles
       }
 
       update() {
@@ -67,7 +67,7 @@ const AnimatedBackground = () => {
 
     const drawGrid = () => {
         if (!ctx) return
-        ctx.strokeStyle = 'rgba(67, 176, 241, 0.12)'
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.12)'
         ctx.lineWidth = 0.8
   
         for (let x = 0; x < width; x += gridSpacing) {
@@ -95,8 +95,8 @@ const AnimatedBackground = () => {
 
           if (distance < connectionDistance) {
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(67, 176, 241, ${(1 - distance / connectionDistance) * 0.5})`
-            ctx.lineWidth = 1.5
+            ctx.strokeStyle = `rgba(0, 0, 0, ${(1 - distance / connectionDistance) * 0.5})`
+            ctx.lineWidth = 3
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
             ctx.stroke()

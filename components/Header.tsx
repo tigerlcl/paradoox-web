@@ -23,13 +23,11 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="bg-white opacity-95 rounded-lg p-2 shadow-md hover:shadow-lg transition-all duration-200">
-                <img 
-                  src="/paradoox ai logo.svg" 
-                  alt="Paradoox AI" 
-                  className="h-8 w-auto"
-                />
-              </div>
+              <img 
+                src="/paradoox ai logo.svg" 
+                alt="Paradoox AI" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 
@@ -39,7 +37,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-ui text-base font-medium tracking-wide"
+                className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui text-xl font-medium tracking-wide"
               >
                 {item.name}
               </Link>
@@ -54,7 +52,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                 href="https://github.com/HKUSTDial/deepfund"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
               >
                 <i className="fab fa-github text-3xl"></i>
               </Link>
@@ -80,15 +78,15 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
             <div className="flex items-center space-x-3">
               <button
                 onClick={onOpenWaitlist}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-medium text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-6 py-2 rounded-full hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 font-medium text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
-                Join Waitlist
+                Join the Waitlist
               </button>
               <Link
                 href="https://deepfund.paradoox.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-blue-500 text-blue-400 px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 font-medium text-sm"
+                className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-base"
               >
                 Try Demo
               </Link>
@@ -99,7 +97,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-blue-400 focus:outline-none"
+              className="text-gray-300 hover:text-yellow-400 focus:outline-none"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -120,7 +118,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-ui font-medium"
+                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -141,7 +139,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                   href="https://discord.gg/paradoox"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   <i className="fab fa-discord text-xl"></i>
                 </Link>
@@ -149,7 +147,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                   href="https://x.com/paradoox_ai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   <i className="fab fa-x-twitter text-xl"></i>
                 </Link>
@@ -160,7 +158,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                   onOpenWaitlist()
                   setIsMenuOpen(false)
                 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-purple-700 transition-colors duration-200 font-medium text-center w-full"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-6 py-2 rounded-full hover:from-yellow-400 hover:to-yellow-500 transition-colors duration-200 font-medium text-center w-full"
               >
                 Join Waitlist
               </button>
@@ -168,7 +166,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                 href="https://deepfund.paradoox.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-blue-500 text-blue-400 px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 font-medium text-center"
+                className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
               >
                 Try Demo
               </Link>

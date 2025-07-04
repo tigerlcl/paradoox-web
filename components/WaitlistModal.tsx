@@ -148,8 +148,8 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             <>
               {/* Header */}
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <i className="fas fa-rocket text-white text-2xl"></i>
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <i className="fas fa-rocket text-black text-2xl"></i>
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-2 text-heading">Join Our Waitlist</h2>
                 <p className="text-gray-300 text-body">
@@ -171,7 +171,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
+                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -194,7 +194,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                           ? 'border-red-500 focus:ring-2 focus:ring-red-500' 
                           : isEmailValid 
                             ? 'border-green-500 focus:ring-2 focus:ring-green-500' 
-                            : 'border-slate-600/50 focus:ring-2 focus:ring-cyan-500 focus:border-transparent'
+                            : 'border-slate-600/50 focus:ring-2 focus:ring-yellow-500 focus:border-transparent'
                       }`}
                       placeholder="Enter your email address"
                     />
@@ -224,7 +224,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     required
                     value={formData.investorType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
+                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
                   >
                     <option value="individual-investor">Individual Investor</option>
                     <option value="financial-expert">Financial Expert</option>
@@ -245,7 +245,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     required
                     value={formData.investment_experience}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
+                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
                   >
                     <option value="No experience">No experience</option>
                     <option value="0-1 years">0-1 years</option>
@@ -266,7 +266,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
+                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 backdrop-blur-sm"
                     placeholder="Company or organization (optional)"
                   />
                 </div>
@@ -282,7 +282,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     rows={3}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 resize-none backdrop-blur-sm"
+                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 resize-none backdrop-blur-sm"
                     placeholder="Tell us about your investing interests (optional)"
                   />
                 </div>
@@ -298,17 +298,17 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full bg-gradient-to-r from-yellow-300 to-yellow-500 text-black py-3 px-6 rounded-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-2">
                       <i className="fas fa-spinner fa-spin"></i>
-                      Joining Waitlist...
+                      Submitting...
                     </span>
                   ) : (
                     <span className="flex items-center justify-center gap-2">
                       <i className="fas fa-rocket"></i>
-                      Join the Waitlist
+                      Submit
                     </span>
                   )}
                 </button>
@@ -327,7 +327,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
               </p>
               <button
                 onClick={resetModal}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black py-3 px-6 rounded-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg"
               >
                 Close
               </button>
