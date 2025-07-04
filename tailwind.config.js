@@ -15,6 +15,11 @@ module.exports = {
           700: '#1d4ed8',
           900: '#1e3a8a',
         },
+        brand: {
+          yellow: '#FFCB00',
+          'yellow-light': '#FFD633',
+          'yellow-dark': '#E6B600',
+        },
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in-out',
