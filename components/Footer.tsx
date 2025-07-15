@@ -58,15 +58,6 @@ export default function Footer({ onOpenWaitlist }: FooterProps) {
             <h3 className="text-lg font-semibold mb-4 text-gray-100 text-heading">Get Started</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={onOpenWaitlist}
-                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
-                >
-                  <i className="fas fa-user-plus text-yellow-400 text-xs"></i>
-                  <span className="text-sm">Join Waitlist</span>
-                </button>
-              </li>
-              <li>
                 <Link 
                   href="https://deepfund.paradoox.ai/" 
                   target="_blank"
@@ -74,7 +65,7 @@ export default function Footer({ onOpenWaitlist }: FooterProps) {
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
                 >
                   <i className="fas fa-rocket text-yellow-400 text-xs"></i>
-                  <span className="text-sm">Try DeepFund Demo</span>
+                  <span className="text-sm">Watch Demo</span>
                 </Link>
               </li>
               <li>
@@ -88,7 +79,7 @@ export default function Footer({ onOpenWaitlist }: FooterProps) {
                   <span className="text-sm">View on GitHub</span>
                 </Link>
               </li>
-              <li className="pt-2 border-t border-gray-700">
+              <li>
                 <a 
                   href="mailto:hello@paradoox.ai" 
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
@@ -106,7 +97,7 @@ export default function Footer({ onOpenWaitlist }: FooterProps) {
           <div className="text-sm text-gray-400 mb-4 md:mb-0 text-ui flex items-center gap-2">
             <span>Made with</span>
             <i className="fas fa-heart text-red-400 animate-pulse"></i>
-            <span>for rational investing</span>
+            <span>for smart investing</span>
           </div>
           <div className="flex space-x-6">
             <Link href="#privacy" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">

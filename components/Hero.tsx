@@ -36,15 +36,27 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button
-              onClick={onOpenWaitlist}
-              className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-10 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui"
+            <Link href="/login">
+              <button className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-10 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui">
+                <span className="flex items-center gap-2">
+                  Let's Roll!
+                  <i className="fas fa-play text-sm"></i>
+                </span>
+              </button>
+            </Link>
+            <Link 
+                  href="https://deepfund.paradoox.ai/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
             >
-              <span className="flex items-center gap-2">
-                Join the Waitlist
-                <i className="fas fa-arrow-right text-sm"></i>
-              </span>
-            </button>
+              <button className="bg-white/80 backdrop-blur-sm text-gray-900 px-10 py-4 rounded-full text-lg font-semibold hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui border-2 border-gray-200"
+              >
+                <span className="flex items-center gap-2">
+                  Watch Demo
+                  <i className="fas fa-arrow-right text-sm"></i>
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

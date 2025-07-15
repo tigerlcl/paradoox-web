@@ -21,8 +21,8 @@ const AnimatedBackground = () => {
     })
 
     const particles: Particle[] = []
-    const particleCount = 120
-    const connectionDistance = 140
+    const particleCount = 100
+    const connectionDistance = 120
     const gridSpacing = 40
 
     class Particle {

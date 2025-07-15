@@ -25,7 +25,7 @@ export function ProblemSection({ onOpenWaitlist }: SectionProps) {
             <div className="w-16 h-16 bg-yellow-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <i className="fas fa-brain text-yellow-400 text-2xl"></i>
             </div>
-            <h3 className="text-xl font-bold text-gray-100 mb-4 text-heading">Information Overload & Emotional Decisions</h3>
+            <h3 className="text-xl font-bold text-gray-100 mb-4 text-heading">Information Overload & Irrational Decisions</h3>
             <p className="text-gray-300 text-body leading-relaxed">
               The modern market is a <span className="text-yellow-400 font-medium">flood of information</span>. For most individual investors, 
               this leads to emotional choices and <span className="text-yellow-400 font-medium">'gut-feel' trades</span> rather than rational analysis.
@@ -39,7 +39,7 @@ export function ProblemSection({ onOpenWaitlist }: SectionProps) {
             </div>
             <h3 className="text-xl font-bold text-gray-100 mb-4 text-heading">Limited & Unclear Tools</h3>
             <p className="text-gray-300 text-body leading-relaxed">
-              Traditional <span className="text-yellow-400 font-medium">'demo accounts'</span> show you what happens, but never why. 
+              Traditional <span className="text-yellow-400 font-medium">'simulation accounts'</span> show you what happens, but never elaborate why. 
               They are one-size-fits-all and lack the <span className="text-yellow-400 font-medium">personalized, logical explanations</span> you need to actually learn.
             </p>
           </div>
@@ -54,26 +54,6 @@ export function ProblemSection({ onOpenWaitlist }: SectionProps) {
               As AI becomes more common, its decision-making process is often a <span className="text-yellow-400 font-medium">mystery</span>. 
               Investors need and deserve <span className="text-yellow-400 font-medium">transparency</span>, but the market is full of 'black box' solutions.
             </p>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="dark-card rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-100 mb-4 text-heading">
-              Ready for a Solution That Actually Makes Sense?
-            </h3>
-            <p className="text-gray-300 mb-6 text-body leading-relaxed">
-              Join our waitlist to be the first to experience AI-driven investing that's
-              <span className="text-yellow-400 font-medium"> transparent</span>, <span className="text-yellow-400 font-medium">personalized</span>, and <span className="text-yellow-400 font-medium">rational</span>.
-            </p>
-                          <button
-              onClick={onOpenWaitlist}
-              className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-8 py-3 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui inline-flex items-center gap-2"
-            >
-              Get Early Access
-              <i className="fas fa-arrow-right text-sm"></i>
-            </button>
           </div>
         </div>
       </div>
@@ -166,37 +146,6 @@ export function SolutionSection({ onOpenWaitlist }: SectionProps) {
                 From <span className="text-yellow-400 font-medium">US Stocks and Crypto to Gold and Oil</span>, our platform is designed to analyze 
                 a diverse range of markets.
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="dark-card rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-100 mb-4 text-heading">
-              Ready to Experience the Future of Investing?
-            </h3>
-            <p className="text-gray-300 mb-6 text-body leading-relaxed">
-              Join thousands of investors who are already building their AI-powered investment strategies. 
-              Get early access to DeepFund and InvestArena.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={onOpenWaitlist}
-                className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-8 py-3 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl text-ui inline-flex items-center gap-2"
-              >
-                Join the Waitlist
-                <i className="fas fa-arrow-right text-sm"></i>
-              </button>
-              <Link
-                href="https://deepfund.paradoox.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-yellow-500 text-yellow-400 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-200 text-ui inline-flex items-center gap-2"
-              >
-                Try DeepFund Demo
-                <i className="fas fa-external-link-alt text-sm"></i>
-              </Link>
             </div>
           </div>
         </div>
