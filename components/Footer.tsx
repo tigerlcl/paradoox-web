@@ -1,10 +1,6 @@
 import Link from 'next/link'
 
-interface FooterProps {
-  onOpenWaitlist: () => void
-}
-
-export default function Footer({ onOpenWaitlist }: FooterProps) {
+export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (

@@ -73,7 +73,7 @@ export default function Header() {
             {/* Action Buttons */}
             <div className="flex items-center space-x-3">
               <Link
-                href="/login"
+                href="/auth/login"
                 className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-base"
               >
                 Start Your Trial
@@ -142,7 +142,7 @@ export default function Header() {
               </div>
 
               <Link
-                href="/login"
+                href="/auth/login"
                 className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
               >
                 Start Your Trial

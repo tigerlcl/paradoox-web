@@ -1,10 +1,6 @@
 import Link from 'next/link'
 
-interface HeroProps {
-  onOpenWaitlist: () => void
-}
-
-export default function Hero({ onOpenWaitlist }: HeroProps) {
+export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Enhanced Financial Data Visualization Effects */}
@@ -36,7 +32,7 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Link href="/login">
+            <Link href="/auth/login">
               <button className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-10 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui">
                 <span className="flex items-center gap-2">
                   Let's Roll!

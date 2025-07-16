@@ -1,10 +1,6 @@
 import Link from 'next/link'
 
-interface SectionProps {
-  onOpenWaitlist: () => void
-}
-
-export function ProblemSection({ onOpenWaitlist }: SectionProps) {
+export function ProblemSection() {
   return (
     <section id="problem" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +57,7 @@ export function ProblemSection({ onOpenWaitlist }: SectionProps) {
   )
 }
 
-export function SolutionSection({ onOpenWaitlist }: SectionProps) {
+export function SolutionSection() {
   return (
     <section id="solution" className="py-20 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,7 +150,7 @@ export function SolutionSection({ onOpenWaitlist }: SectionProps) {
   )
 }
 
-export function CustomerSection({ onOpenWaitlist }: SectionProps) {
+export function CustomerSection() {
   return (
     <section id="customers" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
