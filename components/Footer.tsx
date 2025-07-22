@@ -96,10 +96,10 @@ export default function Footer() {
             <span>for smart investing</span>
           </div>
           <div className="flex space-x-6">
-            <Link href="#privacy" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+            <Link href="/privacy" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
               Privacy Policy
             </Link>
-            <Link href="#terms" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+            <Link href="/terms" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
               Terms of Service
             </Link>
           </div>
