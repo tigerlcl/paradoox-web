@@ -12,8 +12,8 @@ export default function LoginPage() {
   const [success, setSuccess] = useState('')
   const [resetLoading, setResetLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const router = useRouter()
   const { user, loading, signIn, signUp, signInWithOAuth, resetPassword } = useAuth()
+  const router = useRouter()
   
   const [formData, setFormData] = useState({
     email: '',

@@ -6,25 +6,17 @@ import { useAuth } from '@/contexts/AuthContext'
 import Link from 'next/link'
 
 export default function DemoPage() {
-  const { user, loading, signOut } = useAuth()
+  const { user, signOut } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
-    if (!loading && !user) {
+    if ( !user) {
       router.push('/auth/login')
     }
-  }, [user, loading, router])
+  }, [user, router])
 
   const handleSignOut = async () => {
     await signOut()
-  }
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-yellow-500"></div>
-      </div>
-    )
   }
 
   if (!user) {
