@@ -22,8 +22,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata = {
   title: 'Paradoox AI - How AI can shape your trust?',
-  description: 'Leading AI research and innovation company building trustworthy artificial intelligence through cutting-edge LLM and Multi-Agent research.',
-  keywords: 'AI, artificial intelligence, research, innovation, machine learning, deep learning, LLM, Multi-Agent, trustworthy AI',
+  description: 'Pilot Your Next Investment with AI-driven Fund Manager',
+  keywords: 'LLM, Multi-Agent, trustworthy AI, Paradoox AI',
   icons: {
     icon: '/icon.jpg',
   },

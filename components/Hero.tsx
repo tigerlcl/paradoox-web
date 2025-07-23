@@ -15,9 +15,9 @@ export default function Hero() {
           {/* Main Heading */}
           <div className="bg-gray-100/90 backdrop-blur-sm rounded-2xl p-8 mb-8 shadow-lg">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-display">
-              <span className="gradient-text">Let AI Reshape Your</span>
+              <span className="gradient-text">Let AI Reshape</span>
               <br />
-              <span className="text-gray-900">Exclusive Path to</span>
+              <span className="text-gray-900">Your Path to</span>
               <br />
               <span className="text-yellow-400">Rational Investing</span>
             </h1>

@@ -31,9 +31,9 @@ export default function PrivacyPolicyPage() {
             
             <Link 
               href="/" 
-              className="text-gray-300 hover:text-yellow-400 text-sm inline-flex items-center transition-colors duration-200"
+              className="text-gray-300 hover:text-yellow-400 text-lg font-semibold inline-flex items-center transition-colors duration-200"
             >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
               </svg>
               Back to Home
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-lg text-gray-400">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              Last updated: July 18, 2025
             </p>
           </div>
 
@@ -112,19 +112,8 @@ export default function PrivacyPolicyPage() {
             </p>
             <h3>Personal information</h3>
             <p>
-              We may ask for personal information, such as your:
+              We may ask for personal information, such as your name, email, social media profiles and payment information.
             </p>
-            <ul>
-              <li>Name</li>
-              <li>Email</li>
-              <li>Social media profiles</li>
-              <li>Date of birth</li>
-              <li>Phone/mobile number</li>
-              <li>Home/Mailing address</li>
-              <li>Work address</li>
-              <li>Payment information</li>
-            </ul>
-
             <h2>2. Legal bases for processing</h2>
             <p>
               We will process your personal information lawfully, fairly and in a transparent manner. We collect and process information about you only where we have legal bases for doing so.
