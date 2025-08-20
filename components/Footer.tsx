@@ -29,9 +29,14 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-gray-100 text-heading">Navigate</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2">
+                <Link 
+                  href="https://deepfund.paradoox.ai/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
+                >
                   <i className="fas fa-cube text-xs"></i>
-                  Products
+                  Invest Arena
                 </Link>
               </li>
               <li>
@@ -55,9 +60,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link 
-                  href="https://deepfund.paradoox.ai/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/demo"
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
                 >
                   <i className="fas fa-rocket text-yellow-400 text-xs"></i>

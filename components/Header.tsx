@@ -3,11 +3,15 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function Header() {
+interface HeaderProps {
+  onWaitlistOpen: () => void
+}
+
+export default function Header({ onWaitlistOpen }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigationItems = [
-    { name: 'Products', href: '/' },
+    { name: 'Invest Arena', href: 'https://deepfund.paradoox.ai/', external: true },
     { name: 'Blog', href: '/' },
     { name: 'Company', href: '/' },
   ]
@@ -33,6 +37,8 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui text-xl font-medium tracking-wide"
               >
                 {item.name}
@@ -72,12 +78,12 @@ export default function Header() {
             
             {/* Action Buttons */}
             <div className="flex items-center space-x-3">
-              <Link
-                href="/auth/login"
+              <button
+                onClick={onWaitlistOpen}
                 className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-base"
               >
-                Start Your Trial
-              </Link>
+                Join Wait List
+              </button>
             </div>
           </div>
 
@@ -106,6 +112,8 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -142,11 +150,20 @@ export default function Header() {
               </div>
 
               <Link
-                href="/auth/login"
+                href="/demo"
+                className="text-gray-300 hover:text-yellow-400 px-6 py-2 rounded-full transition-colors duration-200 font-medium text-center"
+              >
+                Try Demo
+              </Link>
+              <button
+                onClick={() => {
+                  onWaitlistOpen()
+                  setIsMenuOpen(false)
+                }}
                 className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
               >
-                Start Your Trial
-              </Link>
+                Join Wait List
+              </button>
             </nav>
           </div>
         )}
