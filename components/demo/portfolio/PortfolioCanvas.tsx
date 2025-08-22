@@ -20,22 +20,20 @@ export default function PortfolioCanvas({ portfolios }: PortfolioCanvasProps) {
           onClick={() => setShowCreatePortfolio(true)}
           className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
         >
-          Add New
+          Add Portfolio
         </button>
       </div>
 
-      {showCreatePortfolio ? (
-        <CreatePortfolioModal 
-          isOpen={showCreatePortfolio}
-          onClose={() => setShowCreatePortfolio(false)}
-        />
-      ) : (
-        <div className="grid gap-6">
-          {portfolios.map((portfolio) => (
-            <PortfolioCard key={portfolio.id} portfolio={portfolio} />
-          ))}
-        </div>
-      )}
+      <div className="grid gap-6">
+        {portfolios.map((portfolio) => (
+          <PortfolioCard key={portfolio.id} portfolio={portfolio} />
+        ))}
+      </div>
+
+      <CreatePortfolioModal 
+        isOpen={showCreatePortfolio}
+        onClose={() => setShowCreatePortfolio(false)}
+      />
     </div>
   )
 } 
