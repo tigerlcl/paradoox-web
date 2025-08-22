@@ -13,12 +13,12 @@ export default function PortfolioCard({ portfolio }: PortfolioCardProps) {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      <div className="dark-card rounded-xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-semibold">{portfolio.name} Performance</h3>
+          <h3 className="text-xl font-semibold text-gray-100 text-heading">{portfolio.name}</h3>
           <button 
             onClick={() => setShowEditModal(true)}
-            className="text-gray-400 hover:text-gray-600"
+            className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 opacity-0 group-hover:opacity-100"
             title="Edit Portfolio"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,22 +28,22 @@ export default function PortfolioCard({ portfolio }: PortfolioCardProps) {
         </div>
       
       <div className="grid grid-cols-3 gap-8">
-        <div>
-          <div className="text-sm text-gray-600 mb-1">Total Value</div>
-          <div className="text-2xl font-bold">${portfolio.totalValue.toLocaleString()}</div>
+        <div className="group/metric hover:scale-105 transition-transform duration-200">
+          <div className="text-sm text-gray-400 mb-1 text-ui">Total Value</div>
+          <div className="text-2xl font-bold text-gray-100 text-heading">${portfolio.totalValue.toLocaleString()}</div>
         </div>
-        <div>
-          <div className="text-sm text-gray-600 mb-1">24H Change</div>
-          <div className={`text-2xl font-bold ${portfolio.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        <div className="group/metric hover:scale-105 transition-transform duration-200">
+          <div className="text-sm text-gray-400 mb-1 text-ui">24H Change</div>
+          <div className={`text-2xl font-bold text-heading ${portfolio.change24h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
             {portfolio.change24h >= 0 ? '+' : ''}${Math.abs(portfolio.change24h).toLocaleString()}
           </div>
-          <div className={`text-sm ${portfolio.changePercent >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <div className={`text-sm text-ui ${portfolio.changePercent >= 0 ? 'text-green-400' : 'text-red-400'}`}>
             ({portfolio.changePercent >= 0 ? '+' : ''}{portfolio.changePercent}%)
           </div>
         </div>
-        <div>
-          <div className="text-sm text-gray-600 mb-1">Cum. Return</div>
-          <div className="text-2xl font-bold">{portfolio.cumulativeReturn}%</div>
+        <div className="group/metric hover:scale-105 transition-transform duration-200">
+          <div className="text-sm text-gray-400 mb-1 text-ui">Cum. Return</div>
+          <div className="text-2xl font-bold text-gray-100 text-heading">{portfolio.cumulativeReturn}%</div>
         </div>
       </div>
       </div>
