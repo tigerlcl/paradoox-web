@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Portfolio } from '../types'
 import PortfolioCard from './PortfolioCard'
 import CreatePortfolioModal from './CreatePortfolioModal'
+import PortfolioDetailsView from './PortfolioDetailsView'
 
 interface PortfolioCanvasProps {
   portfolios: Portfolio[]
@@ -11,6 +12,15 @@ interface PortfolioCanvasProps {
 
 export default function PortfolioCanvas({ portfolios }: PortfolioCanvasProps) {
   const [showCreatePortfolio, setShowCreatePortfolio] = useState(false)
+  const [expandedPortfolioId, setExpandedPortfolioId] = useState<number | null>(null)
+
+  const handlePortfolioExpand = (portfolioId: number) => {
+    setExpandedPortfolioId(expandedPortfolioId === portfolioId ? null : portfolioId)
+  }
+
+  const handlePortfolioCollapse = () => {
+    setExpandedPortfolioId(null)
+  }
 
   return (
     <div className="space-y-6">
@@ -31,7 +41,21 @@ export default function PortfolioCanvas({ portfolios }: PortfolioCanvasProps) {
             className="animate-fade-in-up"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <PortfolioCard portfolio={portfolio} />
+            <PortfolioCard 
+              portfolio={portfolio} 
+              isExpanded={expandedPortfolioId === portfolio.id}
+              onExpand={() => handlePortfolioExpand(portfolio.id)}
+            />
+            
+            {/* Expanded Details View */}
+            {expandedPortfolioId === portfolio.id && (
+              <div className="animate-fade-in-up">
+                <PortfolioDetailsView
+                  portfolio={portfolio}
+                  onClose={handlePortfolioCollapse}
+                />
+              </div>
+            )}
           </div>
         ))}
       </div>

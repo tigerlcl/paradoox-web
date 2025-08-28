@@ -115,9 +115,9 @@ export default function CreatePortfolioModal({ isOpen, onClose }: CreatePortfoli
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl border border-gray-200 w-full max-w-3xl max-h-[90vh] flex flex-col">
+      <div className="bg-white rounded-xl shadow-xl border border-gray-200 w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden">
         {/* Fixed Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-200">
+        <div className="flex justify-between items-center p-6 border-b border-gray-200 flex-shrink-0">
           <h3 className="text-xl font-semibold">Create New Portfolio</h3>
           <button
             onClick={handleClose}
@@ -184,7 +184,7 @@ export default function CreatePortfolioModal({ isOpen, onClose }: CreatePortfoli
 
         {/* Unified Form */}
         {!showProgress && (
-          <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+          <form onSubmit={handleSubmit} className="flex-1 flex flex-col overflow-hidden">
             {/* Scrollable Content */}
             <div className="flex-1 overflow-y-auto p-6 space-y-8">
               {/* Quick Presets */}
@@ -411,7 +411,7 @@ export default function CreatePortfolioModal({ isOpen, onClose }: CreatePortfoli
             </div>
 
             {/* Fixed Footer */}
-            <div className="border-t border-gray-200 p-6">
+            <div className="border-t border-gray-200 p-6 flex-shrink-0 bg-white">
               <div className="flex justify-end space-x-3">
                 <button
                   type="button"
