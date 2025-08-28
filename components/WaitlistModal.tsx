@@ -1,13 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from '@/lib/supabase'
 import validator from 'validator'
-
-// TODO: Replace with your Supabase project URL and anon key
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'YOUR_SUPABASE_URL'
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY'
-const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 interface WaitlistModalProps {
   isOpen: boolean
@@ -126,11 +121,12 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[60] flex items-start justify-center p-4 pt-20">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/85 backdrop-blur-lg"
         onClick={onClose}
+        style={{ backdropFilter: 'blur(8px)' }}
       />
       
       {/* Modal */}
@@ -293,6 +289,27 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                     {error}
                   </div>
                 )}
+
+                {/* Privacy Disclaimer */}
+                <div className="text-xs text-gray-400 text-center leading-relaxed">
+                  By submitting this form, you agree to our{' '}
+                  <a 
+                    href="/terms" 
+                    target="_blank"
+                    className="text-yellow-400 hover:text-yellow-300 underline transition-colors duration-200"
+                  >
+                    Terms of Service
+                  </a>
+                  {' '}and{' '}
+                  <a 
+                    href="/privacy" 
+                    target="_blank"
+                    className="text-yellow-400 hover:text-yellow-300 underline transition-colors duration-200"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </div>
 
                 {/* Submit button */}
                 <button

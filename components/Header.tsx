@@ -4,14 +4,14 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 interface HeaderProps {
-  onOpenWaitlist: () => void
+  onWaitlistOpen: () => void
 }
 
-export default function Header({ onOpenWaitlist }: HeaderProps) {
+export default function Header({ onWaitlistOpen }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigationItems = [
-    { name: 'Products', href: '/' },
+    { name: 'Invest Arena', href: 'https://deepfund.paradoox.ai/', external: true },
     { name: 'Blog', href: '/' },
     { name: 'Company', href: '/' },
   ]
@@ -37,6 +37,8 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
               <Link
                 key={item.name}
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui text-xl font-medium tracking-wide"
               >
                 {item.name}
@@ -60,36 +62,28 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                 href="https://discord.gg/paradoox"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
               >
-                <i className="fab fa-discord text-lg"></i>
-              </Link> */}
-              {/* <Link
+                <i className="fab fa-discord text-3xl"></i>
+              </Link>
+              <Link
                 href="https://x.com/paradoox_ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
               >
-                <i className="fab fa-twitter text-lg"></i>
+                <i className="fa-brands fa-x-twitter text-3xl"></i>  
               </Link> */}
             </div>
             
             {/* Action Buttons */}
             <div className="flex items-center space-x-3">
               <button
-                onClick={onOpenWaitlist}
-                className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-6 py-2 rounded-full hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 font-medium text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-              >
-                Join the Waitlist
-              </button>
-              <Link
-                href="https://deepfund.paradoox.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={onWaitlistOpen}
                 className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-base"
               >
-                Try Demo
-              </Link>
+                Join Wait List
+              </button>
             </div>
           </div>
 
@@ -118,6 +112,8 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                 <Link
                   key={item.name}
                   href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -149,27 +145,25 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
-                  <i className="fab fa-x-twitter text-xl"></i>
+                  <i className="fa-brands fa-x-twitter text-xl"></i>
                 </Link>
               </div>
 
-              <button
-                onClick={() => {
-                  onOpenWaitlist()
-                  setIsMenuOpen(false)
-                }}
-                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-6 py-2 rounded-full hover:from-yellow-400 hover:to-yellow-500 transition-colors duration-200 font-medium text-center w-full"
-              >
-                Join Waitlist
-              </button>
               <Link
-                href="https://deepfund.paradoox.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
+                href="/demo"
+                className="text-gray-300 hover:text-yellow-400 px-6 py-2 rounded-full transition-colors duration-200 font-medium text-center"
               >
                 Try Demo
               </Link>
+              <button
+                onClick={() => {
+                  onWaitlistOpen()
+                  setIsMenuOpen(false)
+                }}
+                className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
+              >
+                Join Wait List
+              </button>
             </nav>
           </div>
         )}

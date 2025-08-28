@@ -1,10 +1,6 @@
 import Link from 'next/link'
 
-interface HeroProps {
-  onOpenWaitlist: () => void
-}
-
-export default function Hero({ onOpenWaitlist }: HeroProps) {
+export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Enhanced Financial Data Visualization Effects */}
@@ -19,9 +15,9 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
           {/* Main Heading */}
           <div className="bg-gray-100/90 backdrop-blur-sm rounded-2xl p-8 mb-8 shadow-lg">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-display">
-              <span className="gradient-text">Let AI Reshape Your</span>
+              <span className="gradient-text">Let AI Reshape</span>
               <br />
-              <span className="text-gray-900">Exclusive Path to</span>
+              <span className="text-gray-900">Your Path to</span>
               <br />
               <span className="text-yellow-400">Rational Investing</span>
             </h1>
@@ -30,21 +26,33 @@ export default function Hero({ onOpenWaitlist }: HeroProps) {
             {/* Sub-headline */}
             <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed text-body">
               Paradoox AI is building your personal <span className="text-yellow-400 font-semibold">AI-driven Fund Manager</span>, making sophisticated, 
-              data-backed investment strategies accessible to <span className="text-yellow-400 font-semibold">everyone</span>
+              data-rich investment accessible to <span className="text-yellow-400 font-semibold">everyone</span>
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button
-              onClick={onOpenWaitlist}
-              className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-10 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui"
+            <Link href="/demo">
+              <button className="bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-10 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui">
+                <span className="flex items-center gap-2">
+                  Watch DeepFund Demo
+                  <i className="fas fa-play text-sm"></i>
+                </span>
+              </button>
+            </Link>
+            <Link 
+                  href="https://deepfund.paradoox.ai/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
             >
-              <span className="flex items-center gap-2">
-                Join the Waitlist
-                <i className="fas fa-arrow-right text-sm"></i>
-              </span>
-            </button>
+              <button className="bg-white/80 backdrop-blur-sm text-gray-900 px-10 py-4 rounded-full text-lg font-semibold hover:bg-white/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-ui border-2 border-gray-200"
+              >
+                <span className="flex items-center gap-2">
+                  Explore Invest Arena
+                  <i className="fas fa-arrow-right text-sm"></i>
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
