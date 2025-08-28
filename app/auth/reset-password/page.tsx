@@ -20,14 +20,21 @@ export default function AuthResetPasswordPage() {
     setError('')
     setSuccess('')
     
+    // Validate that passwords match
+    if (password !== confirmPassword) {
+      setError('Passwords do not match')
+      return
+    }
+    
     try {
       await updatePassword(password)
       setSuccess('Updated! Please log in with your new password.')
-    } catch (error: any) {
-      setError(error.message)
-    } finally {
+      // Only sign out and redirect on successful password update
       await signOut()
       router.push('/auth/login')
+    } catch (error: any) {
+      setError(error.message)
+      // Don't redirect on error - let user see the error and try again
     }
   }
 

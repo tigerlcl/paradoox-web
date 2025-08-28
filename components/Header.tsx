@@ -58,7 +58,7 @@ export default function Header({ onWaitlistOpen }: HeaderProps) {
               >
                 <i className="fab fa-github text-3xl"></i>
               </Link>
-              <Link
+              {/* <Link
                 href="https://discord.gg/paradoox"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -73,7 +73,7 @@ export default function Header({ onWaitlistOpen }: HeaderProps) {
                 className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
               >
                 <i className="fa-brands fa-x-twitter text-3xl"></i>  
-              </Link>
+              </Link> */}
             </div>
             
             {/* Action Buttons */}
