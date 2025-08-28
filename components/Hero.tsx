@@ -26,7 +26,7 @@ export default function Hero() {
             {/* Sub-headline */}
             <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed text-body">
               Paradoox AI is building your personal <span className="text-yellow-400 font-semibold">AI-driven Fund Manager</span>, making sophisticated, 
-              data-backed investment strategies accessible to <span className="text-yellow-400 font-semibold">everyone</span>
+              data-rich investment accessible to <span className="text-yellow-400 font-semibold">everyone</span>
             </p>
           </div>
 

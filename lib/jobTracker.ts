@@ -153,7 +153,7 @@ export const tradingAPI = {
       }
       
       // Return some default models for testing
-      const fallbackModels = ['GPT 4o mini', 'Claude 4 Sonnet', 'Deepseek v3.1']
+      const fallbackModels = ['GPT 5 mini', 'Claude 4 Sonnet', 'Deepseek v3.1']
       apiCache.models = { data: fallbackModels, timestamp: now }
       return fallbackModels
     }

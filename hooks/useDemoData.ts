@@ -3,9 +3,36 @@ import { Portfolio, Agent, CommunityPost } from '@/components/demo/types'
 
 export function useDemoData() {
   const [portfolios] = useState<Portfolio[]>([
-    { id: 1, name: 'Tiger Alpha Fund', totalValue: 12150, change24h: 2340, changePercent: 1.9, cumulativeReturn: 7.13 },
-    { id: 2, name: 'Quantum Edge Portfolio', totalValue: 7410, change24h: 892, changePercent: 0.6, cumulativeReturn: 2.36 },
-    { id: 3, name: 'Aurora Growth Vault', totalValue: 39410, change24h: -1810, changePercent: -2.7, cumulativeReturn: 7.13 }
+    { 
+      id: 1, 
+      name: 'Tiger Alpha Fund', 
+      totalValue: 12150, 
+      change24h: 2340, 
+      changePercent: 1.9, 
+      cumulativeReturn: 7.13,
+      createdDate: '2025-03-17',
+      lastUpdated: '2025-06-08'
+    },
+    { 
+      id: 2, 
+      name: 'Quantum Edge Portfolio', 
+      totalValue: 7410, 
+      change24h: 892, 
+      changePercent: 0.6, 
+      cumulativeReturn: 2.36,
+      createdDate: '2025-05-01',
+      lastUpdated: '2025-08-25'
+    },
+    { 
+      id: 3, 
+      name: 'Aurora Growth Vault', 
+      totalValue: 39410, 
+      change24h: -1810, 
+      changePercent: -2.7, 
+      cumulativeReturn: 7.13,
+      createdDate: '2024-10-20',
+      lastUpdated: '2024-12-23'
+    }
   ])
 
   const [agents] = useState<Agent[]>([

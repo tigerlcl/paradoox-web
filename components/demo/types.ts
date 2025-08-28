@@ -7,6 +7,8 @@ export interface Portfolio {
   change24h: number
   changePercent: number
   cumulativeReturn: number
+  createdDate: string
+  lastUpdated: string
 }
 
 export interface Agent {

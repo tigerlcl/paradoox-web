@@ -1,17 +1,27 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const AnimatedBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Ensure component is mounted on client side
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
+    // Don't run until component is mounted and we have window access
+    if (!isMounted) return
+    
     const canvas = canvasRef.current
     if (!canvas) return
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    // Safely access window properties after mount
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
 
@@ -131,7 +141,12 @@ const AnimatedBackground = () => {
             height = canvas.height = window.innerHeight
         })
     }
-  }, [])
+  }, [isMounted])
+
+  // Don't render until mounted to prevent hydration mismatch
+  if (!isMounted) {
+    return null
+  }
 
   return (
     <canvas
