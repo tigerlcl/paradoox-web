@@ -3,17 +3,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-interface HeaderProps {
-  onWaitlistOpen: () => void
-}
-
-export default function Header({ onWaitlistOpen }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigationItems = [
-    { name: 'Invest Arena', href: 'https://deepfund.paradoox.ai/', external: true },
-    { name: 'Blog', href: '/' },
-    { name: 'Company', href: '/' },
+    { name: 'Why AI Fails?', href: '#why-ai-fails' },
+    { name: 'Research', href: '#research' },
+    { name: 'Mission', href: '#mission' },
   ]
 
   return (
@@ -34,15 +30,13 @@ export default function Header({ onWaitlistOpen }: HeaderProps) {
           {/* Center Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
                 className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui text-xl font-medium tracking-wide"
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -58,32 +52,16 @@ export default function Header({ onWaitlistOpen }: HeaderProps) {
               >
                 <i className="fab fa-github text-3xl"></i>
               </Link>
-              {/* <Link
-                href="https://discord.gg/paradoox"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
-              >
-                <i className="fab fa-discord text-3xl"></i>
-              </Link>
-              <Link
-                href="https://x.com/paradoox_ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
-              >
-                <i className="fa-brands fa-x-twitter text-3xl"></i>  
-              </Link> */}
             </div>
             
             {/* Action Buttons */}
             <div className="flex items-center space-x-3">
-              <button
-                onClick={onWaitlistOpen}
-                className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-base"
+              <a
+                href="mailto:hello@paradoox.ai"
+                className="border-2 border-yellow-500/50 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition-all duration-200 font-medium text-base"
               >
-                Join Wait List
-              </button>
+                Contact Us
+              </a>
             </div>
           </div>
 
@@ -109,16 +87,14 @@ export default function Header({ onWaitlistOpen }: HeaderProps) {
           <div className="md:hidden py-4 border-t border-gray-700">
             <nav className="flex flex-col space-y-4">
               {navigationItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               
               {/* Mobile Social Icons */}
@@ -127,43 +103,19 @@ export default function Header({ onWaitlistOpen }: HeaderProps) {
                   href="https://github.com/HKUSTDial/deepfund"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
                 >
                   <i className="fab fa-github text-xl"></i>
                 </Link>
-                <Link
-                  href="https://discord.gg/paradoox"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
-                >
-                  <i className="fab fa-discord text-xl"></i>
-                </Link>
-                <Link
-                  href="https://x.com/paradoox_ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
-                >
-                  <i className="fa-brands fa-x-twitter text-xl"></i>
-                </Link>
               </div>
 
-              <Link
-                href="/demo"
-                className="text-gray-300 hover:text-yellow-400 px-6 py-2 rounded-full transition-colors duration-200 font-medium text-center"
+              <a
+                href="mailto:hello@paradoox.ai"
+                className="border-2 border-yellow-500/50 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Try Demo
-              </Link>
-              <button
-                onClick={() => {
-                  onWaitlistOpen()
-                  setIsMenuOpen(false)
-                }}
-                className="border border-yellow-500 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
-              >
-                Join Wait List
-              </button>
+                Contact Us
+              </a>
             </nav>
           </div>
         )}
