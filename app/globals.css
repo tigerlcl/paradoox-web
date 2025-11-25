@@ -4,10 +4,6 @@
 
 @layer base {
   :root {
-    --font-inter: 'Inter', sans-serif;
-    --font-space-grotesk: 'Space Grotesk', sans-serif;
-    --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
-    
     /* Brand Colors */
     --brand-yellow: #FFCB00;
     --brand-yellow-rgb: 255, 203, 0;
@@ -18,28 +14,27 @@
   }
   
   body {
-    @apply text-gray-900 antialiased;
-    font-family: var(--font-plus-jakarta);
-    background: #f5f5f5;
+    @apply antialiased;
+    font-family: 'Roboto Flex', sans-serif;
+    background: #000000;
+    color: #ffffff;
   }
 
   /* Heading styles */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-space-grotesk);
+    font-family: 'Roboto Flex', sans-serif;
     font-weight: 700;
     line-height: 1.2;
   }
 
-
-
   /* Body text */
   p, span, div {
-    font-family: var(--font-plus-jakarta);
+    font-family: 'Roboto Flex', sans-serif;
   }
 
   /* Navigation and UI elements */
   nav, button, .nav-font {
-    font-family: var(--font-plus-jakarta);
+    font-family: 'Roboto Flex', sans-serif;
     font-weight: 500;
   }
 }
@@ -50,10 +45,6 @@
     color: var(--brand-yellow);
   }
   
-  .hover-brand-yellow:hover {
-    color: var(--brand-yellow);
-  }
-  
   .bg-brand-yellow {
     background-color: var(--brand-yellow);
   }
@@ -61,50 +52,116 @@
   .border-brand-yellow {
     border-color: var(--brand-yellow);
   }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent;
-    font-family: var(--font-space-grotesk);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-  
-
-  
-  .dark-card {
-    @apply bg-slate-800/40 border border-slate-600/30 backdrop-blur-sm;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  }
-  
-
 
   /* Modern typography utilities */
   .text-display {
-    font-family: var(--font-space-grotesk);
-    font-weight: 800;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 900;
     letter-spacing: -0.02em;
   }
 
   .text-heading {
-    font-family: var(--font-space-grotesk);
+    font-family: 'Roboto Flex', sans-serif;
     font-weight: 700;
     letter-spacing: -0.01em;
   }
 
   .text-body {
-    font-family: var(--font-plus-jakarta);
+    font-family: 'Roboto Flex', sans-serif;
     font-weight: 400;
     line-height: 1.6;
   }
 
   .text-ui {
-    font-family: var(--font-plus-jakarta);
+    font-family: 'Roboto Flex', sans-serif;
     font-weight: 500;
   }
 
+  /* Custom Animations for redesign */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
 
-  /* Animated financial elements */
+  @keyframes chaos {
+    0% {
+      transform: translateX(0) scale(1);
+      opacity: 0.5;
+    }
+    25% {
+      transform: translateX(-20px) scale(1.1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateX(20px) scale(0.9);
+      opacity: 0.5;
+    }
+    75% {
+      transform: translateX(-10px) scale(1.05);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 15s linear infinite;
+  }
+
+  .animate-chaos {
+    animation: chaos 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  .compass-container .animate-in {
+    animation: animate-in 0.8s ease-out;
+  }
+
+  /* Pulse glow effect */
   @keyframes pulse-glow {
     0%, 100% {
       box-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
@@ -118,38 +175,16 @@
     animation: pulse-glow 3s ease-in-out infinite;
   }
 
-  /* Portfolio animations */
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Utility classes for delays */
+  .delay-700 {
+    animation-delay: 700ms;
   }
 
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-    opacity: 0;
+  .delay-1000 {
+    animation-delay: 1000ms;
   }
 
-  /* Slide up animation for disclaimer */
-  @keyframes slide-up {
-    0% {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .delay-500 {
+    animation-delay: 500ms;
   }
-
-  .animate-slide-up {
-    animation: slide-up 0.4s ease-out forwards;
-  }
-
-
 } 
