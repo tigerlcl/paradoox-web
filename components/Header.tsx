@@ -114,6 +114,7 @@ export default function Header() {
                 <a
                   href="mailto:hello@paradoox.ai"
                   className="flex items-center gap-3 text-secondary"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   <Mail className="w-6 h-6" />
                   <span>Contact</span>
