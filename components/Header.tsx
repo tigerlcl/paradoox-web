@@ -1,10 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { Menu, X, Github, Mail } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navigationItems = [
     { name: 'Why AI Fails?', href: '#why-ai-fails' },
@@ -13,113 +23,106 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-800/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+    <header 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-background/80 backdrop-blur-lg border-b border-white/5' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center py-6">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <img 
-                src="/paradoox ai logo.svg" 
-                alt="Paradoox AI" 
-                className="h-8 w-auto"
-              />
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative h-8 w-auto">
+                <img 
+                  src="/logo.svg" 
+                  alt="Paradoox AI" 
+                  className="h-full w-auto object-contain" 
+                />
+              </div>
             </Link>
           </div>
 
-          {/* Center Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-12">
             {navigationItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui text-xl font-medium tracking-wide"
+                className="text-sm font-medium text-secondary hover:text-primary transition-colors duration-200"
               >
                 {item.name}
               </a>
             ))}
           </nav>
 
-          {/* Right Section - Social Icons + Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            {/* Social Icons */}
-            <div className="flex items-center space-x-3 mr-2">
-              <Link
-                href="https://github.com/HKUSTDial/deepfund"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-100 hover:text-yellow-400 transition-colors duration-200"
-              >
-                <i className="fab fa-github text-3xl"></i>
-              </Link>
-            </div>
+          {/* Right Section */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link
+              href="https://github.com/HKUSTDial/deepfund"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-white transition-colors duration-200"
+            >
+              <Github className="w-5 h-5" />
+            </Link>
             
-            {/* Action Buttons */}
-            <div className="flex items-center space-x-3">
-              <a
-                href="mailto:hello@paradoox.ai"
-                className="border-2 border-yellow-500/50 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition-all duration-200 font-medium text-base"
-              >
-                Contact Us
-              </a>
-            </div>
+            <a
+              href="mailto:hello@paradoox.ai"
+              className="px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-accent transition-colors duration-300"
+            >
+              Contact Us
+            </a>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-yellow-400 focus:outline-none"
+              className="text-white p-2"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-700">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-4 border-t border-white/10 bg-background/95 backdrop-blur-xl absolute left-0 right-0 px-6 h-screen">
+            <nav className="flex flex-col space-y-6 pt-8">
               {navigationItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-ui font-medium"
+                  className="text-2xl font-light text-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
               
-              {/* Mobile Social Icons */}
-              <div className="flex items-center justify-center space-x-6 py-2">
+              <div className="pt-8 flex flex-col gap-6">
                 <Link
                   href="https://github.com/HKUSTDial/deepfund"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                  className="flex items-center gap-3 text-secondary"
                 >
-                  <i className="fab fa-github text-xl"></i>
+                  <Github className="w-6 h-6" />
+                  <span>GitHub</span>
                 </Link>
-              </div>
 
-              <a
-                href="mailto:hello@paradoox.ai"
-                className="border-2 border-yellow-500/50 text-yellow-400 px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-colors duration-200 font-medium text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact Us
-              </a>
+                <a
+                  href="mailto:hello@paradoox.ai"
+                  className="flex items-center gap-3 text-secondary"
+                >
+                  <Mail className="w-6 h-6" />
+                  <span>Contact</span>
+                </a>
+              </div>
             </nav>
           </div>
         )}
       </div>
     </header>
   )
-} 
+}

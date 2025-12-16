@@ -1,42 +1,43 @@
 import Link from 'next/link'
+import { Github, Mail } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-black border-t border-gray-800/50 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-background border-t border-white/5 text-primary">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center mb-6">
+          <div className="col-span-1 md:col-span-2 space-y-8">
+            <Link href="/" className="inline-block">
               <img 
-                src="/paradoox ai logo.svg" 
+                src="/logo.svg" 
                 alt="Paradoox AI" 
-                className="h-10 w-auto"
+                className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
               />
-            </div>
-            <p className="text-gray-300 mb-6 max-w-md text-body leading-relaxed text-lg">
-              The next-generation <span className="text-yellow-400 font-semibold">trusted AI FinTech middleware</span> for financial institutions.
+            </Link>
+            <p className="text-secondary max-w-sm text-sm font-light leading-relaxed">
+              The next-generation <span className="text-white font-medium">trusted AI FinTech middleware</span> for financial institutions.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-white text-heading">Platform</h3>
-            <ul className="space-y-3">
+          <div className="space-y-6">
+            <h3 className="text-sm font-medium text-white uppercase tracking-widest">Platform</h3>
+            <ul className="space-y-4">
               <li>
-                <a href="#why-ai-fails" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+                <a href="#why-ai-fails" className="text-sm text-secondary hover:text-white transition-colors duration-200">
                   Why AI Fails?
                 </a>
               </li>
               <li>
-                <a href="#research" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+                <a href="#research" className="text-sm text-secondary hover:text-white transition-colors duration-200">
                   Research
                 </a>
               </li>
               <li>
-                <a href="#mission" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+                <a href="#mission" className="text-sm text-secondary hover:text-white transition-colors duration-200">
                   Our Mission
                 </a>
               </li>
@@ -44,16 +45,16 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-white text-heading">Connect</h3>
-            <ul className="space-y-3">
+          <div className="space-y-6">
+            <h3 className="text-sm font-medium text-white uppercase tracking-widest">Connect</h3>
+            <ul className="space-y-4">
               <li>
                 <a 
                   href="mailto:hello@paradoox.ai" 
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
+                  className="group flex items-center gap-3 text-sm text-secondary hover:text-white transition-colors duration-200"
                 >
-                  <i className="fas fa-envelope text-yellow-400 text-xs"></i>
-                  <span className="text-sm">hello@paradoox.ai</span>
+                  <Mail className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                  <span>hello@paradoox.ai</span>
                 </a>
               </li>
               <li>
@@ -61,10 +62,10 @@ export default function Footer() {
                   href="https://github.com/HKUSTDial/deepfund" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui flex items-center gap-2"
+                  className="group flex items-center gap-3 text-sm text-secondary hover:text-white transition-colors duration-200"
                 >
-                  <i className="fab fa-github text-yellow-400 text-xs"></i>
-                  <span className="text-sm">GitHub</span>
+                  <Github className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
+                  <span>GitHub</span>
                 </Link>
               </li>
             </ul>
@@ -72,16 +73,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-gray-400 mb-4 md:mb-0 text-ui">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-xs text-secondary font-light">
             <p>© {currentYear} Paradoox AI. All rights reserved.</p>
-            <p className="mt-2 text-xs text-gray-500">Trusted • Intelligent • Financial</p>
           </div>
-          <div className="flex space-x-6">
-            <Link href="/privacy" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+          <div className="flex space-x-8">
+            <Link href="/privacy" className="text-xs text-secondary hover:text-white transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-ui">
+            <Link href="/terms" className="text-xs text-secondary hover:text-white transition-colors duration-200">
               Terms of Service
             </Link>
           </div>
@@ -89,4 +89,4 @@ export default function Footer() {
       </div>
     </footer>
   )
-} 
+}

@@ -8,34 +8,41 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0f9ff',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          900: '#1e3a8a',
-        },
-        brand: {
-          yellow: '#FFCB00',
-          'yellow-light': '#FFD633',
-          'yellow-dark': '#E6B600',
+        background: '#050505', // Very deep black/gray
+        surface: '#0F0F0F', // Slightly lighter for cards
+        'surface-hover': '#1A1A1A',
+        primary: '#FFFFFF',
+        secondary: '#A1A1AA', // Zinc 400
+        accent: {
+          DEFAULT: '#D4B483', // Champagne Gold
+          light: '#E5CFAA',
+          dark: '#B89B6B',
         },
       },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-inter)', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'subtle-glow': 'radial-gradient(circle at center, rgba(212, 180, 131, 0.15) 0%, transparent 70%)',
+      },
       animation: {
-        'fade-in': 'fadeIn 0.8s ease-in-out',
-        'slide-up': 'slideUp 0.8s ease-out',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(50px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },
   },
   plugins: [],
-} 
+}
